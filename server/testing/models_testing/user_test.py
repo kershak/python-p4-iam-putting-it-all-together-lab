@@ -63,6 +63,8 @@ class TestUser:
             db.session.commit()
 
             user = User()
+            #assert user.username is None
+
             with pytest.raises(IntegrityError):
                 db.session.add(user)
                 db.session.commit()
