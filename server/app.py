@@ -49,26 +49,7 @@ class Signup(Resource):
             errors.setdefault("error", []).append(str(e))
             return errors, 422
         
-        # data = request.get_json()
-        # errors = {}
-        # if errors: 
-        #     return errors, 422
-        # new_user = User(bio=data.get('bio'), image_url = data.get('image_url'), username=data.get('username'))
-        # new_user.password_hash=data.get('password')
-
-        # try:
-        #     db.session.add(new_user)
-        #     db.session.commit()
-        #     session['user_id'] = new_user.id
-        #     return make_response(new_user.to_dict(), 201)
-        # except IntegrityError:
-        #     db.session.rollback()
-        #     errors.setdefault("username", []).append("Username already exists.")
-        #     return errors, 422
-        # except Exception as e:
-        #     db.session.rollback()
-        #     errors.setdefault("error", []).append(str(e))
-        #     return errors, 422
+    
         
 class CheckSession(Resource):
     def get(self):
